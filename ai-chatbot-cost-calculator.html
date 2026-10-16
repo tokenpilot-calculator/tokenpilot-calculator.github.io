@@ -59,13 +59,13 @@
 <div class="resultLabel" style="margin-top:9px">Base monthly model cost</div>
 <div id="base" style="font-size:1.3rem;font-weight:800">$26.78</div>
 <div class="metricgrid">
-<div class="metric"><span>Cost per conversation</span><strong id="perConversation">$0.0089</strong></div>
+<div class="metric"><span>Cost per conversation</span><strong id="perConversation">$0.0107</strong></div>
 <div class="metric"><span>Cost per active user / month</span><strong id="perUser">$0.13</strong></div>
 <div class="metric"><span>Model requests / month</span><strong id="requests">24,000</strong></div>
 <div class="metric"><span>Conversations / month</span><strong id="convoTotal">3,000</strong></div>
 <div class="metric"><span>Input tokens / month</span><strong id="inputTotal">45.84M</strong></div>
 <div class="metric"><span>Output tokens / month</span><strong id="outputTotal">5.28M</strong></div>
-<div class="metric"><span>Annual budget with buffer</span><strong id="annual">$385.71</strong></div>
+<div class="metric"><span>Annual budget with buffer</span><strong id="annual">$385.69</strong></div>
 <div class="metric"><span>Input / output split</span><strong id="split">68% / 32%</strong></div>
 </div>
 <p class="note" id="calcNote">Example only. Actual costs depend on your model, tokenization, context handling, and provider-specific billing.</p>
@@ -113,7 +113,7 @@ const ids=['users','conversations','turns','history','systemTokens','userTokens'
 const defaults={users:250,conversations:12,turns:8,history:'full',systemTokens:600,userTokens:120,assistantTokens:220,buffer:20,inputPrice:0.4,outputPrice:1.6};
 const $=id=>document.getElementById(id);
 function num(id){const x=Number($(id).value);return Number.isFinite(x)&&x>0?x:0}
-function money(x,digits){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number.isFinite(x)?x:0)}
+function money(x,digits){const locale=document.documentElement.lang==='ru'?'ru-RU':'en-US';return new Intl.NumberFormat(locale,{style:'currency',currency:'USD',minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number.isFinite(x)?x:0)}
 function compact(x){if(x>=1e9)return (x/1e9).toLocaleString('en-US',{maximumFractionDigits:2})+'B';if(x>=1e6)return (x/1e6).toLocaleString('en-US',{maximumFractionDigits:2})+'M';if(x>=1e3)return (x/1e3).toLocaleString('en-US',{maximumFractionDigits:2})+'K';return Math.round(x).toLocaleString('en-US')}
 function set(id,val){$(id).textContent=val}
 function calc(){

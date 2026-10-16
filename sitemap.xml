@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tokenpilot-calculator.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/ai-api-cost-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html"/>
   </url>
 </urlset>

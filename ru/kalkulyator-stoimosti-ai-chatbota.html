@@ -59,13 +59,13 @@
 <div class="resultLabel" style="margin-top:9px">Базовая стоимость API за месяц</div>
 <div id="base" style="font-size:1.3rem;font-weight:800">$26.78</div>
 <div class="metricgrid">
-<div class="metric"><span>Стоимость одного диалога</span><strong id="perConversation">$0.0089</strong></div>
+<div class="metric"><span>Стоимость одного диалога</span><strong id="perConversation">$0.0107</strong></div>
 <div class="metric"><span>На активного пользователя в месяц</span><strong id="perUser">$0.13</strong></div>
 <div class="metric"><span>Запросов к модели в месяц</span><strong id="requests">24,000</strong></div>
 <div class="metric"><span>Диалогов в месяц</span><strong id="convoTotal">3,000</strong></div>
 <div class="metric"><span>Входных токенов в месяц</span><strong id="inputTotal">45.84M</strong></div>
 <div class="metric"><span>Выходных токенов в месяц</span><strong id="outputTotal">5.28M</strong></div>
-<div class="metric"><span>Бюджет на год с резервом</span><strong id="annual">$385.71</strong></div>
+<div class="metric"><span>Бюджет на год с резервом</span><strong id="annual">$385.69</strong></div>
 <div class="metric"><span>Доля входных / выходных</span><strong id="split">68% / 32%</strong></div>
 </div>
 <p class="note" id="calcNote">Только пример. Реальные расходы зависят от модели, токенизации, истории контекста и правил тарификации провайдера.</p>
@@ -113,8 +113,8 @@ const ids=['users','conversations','turns','history','systemTokens','userTokens'
 const defaults={users:250,conversations:12,turns:8,history:'full',systemTokens:600,userTokens:120,assistantTokens:220,buffer:20,inputPrice:0.4,outputPrice:1.6};
 const $=id=>document.getElementById(id);
 function num(id){const x=Number($(id).value);return Number.isFinite(x)&&x>0?x:0}
-function money(x,digits){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number.isFinite(x)?x:0)}
-function compact(x){if(x>=1e9)return (x/1e9).toLocaleString('en-US',{maximumFractionDigits:2})+'B';if(x>=1e6)return (x/1e6).toLocaleString('en-US',{maximumFractionDigits:2})+'M';if(x>=1e3)return (x/1e3).toLocaleString('en-US',{maximumFractionDigits:2})+'K';return Math.round(x).toLocaleString('en-US')}
+function money(x,digits){const locale=document.documentElement.lang==='ru'?'ru-RU':'en-US';return new Intl.NumberFormat(locale,{style:'currency',currency:'USD',minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number.isFinite(x)?x:0)}
+function compact(x){if(x>=1e9)return (x/1e9).toLocaleString('ru-RU',{maximumFractionDigits:2})+' млрд';if(x>=1e6)return (x/1e6).toLocaleString('ru-RU',{maximumFractionDigits:2})+' млн';if(x>=1e3)return (x/1e3).toLocaleString('ru-RU',{maximumFractionDigits:2})+' тыс.';return Math.round(x).toLocaleString('ru-RU')}
 function set(id,val){$(id).textContent=val}
 function calc(){
 const users=num('users'),cPerUser=num('conversations'),turns=Math.floor(num('turns')),sys=num('systemTokens'),u=num('userTokens'),a=num('assistantTokens'),buffer=num('buffer')/100,ip=num('inputPrice'),op=num('outputPrice');

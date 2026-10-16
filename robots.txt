@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petro89.github.io/tokenpilot/sitemap.xml

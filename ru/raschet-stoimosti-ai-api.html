@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e16">
+<title>Как рассчитать стоимость AI API | TokenPilot</title>
+<meta name="description" content="Понятное руководство по расчёту расходов на AI API: входные и выходные токены, формула, пример месячного бюджета и дополнительные расходы.">
+<link rel="canonical" href="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html">
+<link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html">
+<link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html">
+<meta property="og:title" content="Как рассчитать стоимость AI API | TokenPilot">
+<meta property="og:description" content="Практическое руководство по цене токенов, месячным расходам и планированию бюджета на ИИ.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как рассчитать стоимость AI API","description":"Практическое руководство по оценке месячных расходов на LLM API по входным и выходным токенам.","inLanguage":"ru","mainEntityOfPage":"https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html","publisher":{"@type":"Organization","name":"TokenPilot"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b0e16;--panel:#131827;--line:#2a334a;--text:#f3f5fb;--muted:#aab4cb;--accent:#b5a0ff;--aqua:#70e6d7;--good:#8ce7bc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#302258 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}.wrap{width:min(920px,100%);margin:auto;padding:22px 24px 60px}a{color:var(--aqua);text-underline-offset:3px}a:hover{color:#b1fff4}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:4px 0 46px}.brand{font-weight:850;letter-spacing:-.035em;font-size:1.12rem;color:var(--text);text-decoration:none;display:flex;gap:10px;align-items:center}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--aqua));color:#111323;font-weight:950}.back{font-size:.93rem}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.13em;color:var(--aqua);text-transform:uppercase}h1{font-size:clamp(2.1rem,6vw,3.8rem);line-height:1.08;letter-spacing:-.055em;margin:12px 0 18px;max-width:800px}h2{font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.22;letter-spacing:-.03em;margin:2.1em 0 .65em}h3{font-size:1.1rem;line-height:1.3;margin:1.2em 0 .4em}p{margin:.75em 0}li{margin:.4em 0}.hero{margin-bottom:28px}.lead{font-size:1.15rem;max-width:760px;color:#d6dced}.small{color:var(--muted);font-size:.91rem}.panel{background:rgba(19,24,39,.92);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:22px 0}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#0e1320;border:1px solid #303a53;border-radius:12px;padding:14px 16px;overflow-wrap:anywhere;color:#d9d0ff}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.stat{background:#101522;border:1px solid #29334a;border-radius:14px;padding:14px}.stat strong{display:block;font-size:1.25rem;color:var(--good);margin:4px 0}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}th{color:#d9d0ff}aside{border-left:3px solid var(--aqua);padding:4px 0 4px 16px;color:#d7e1f3;margin:22px 0}footer{border-top:1px solid var(--line);margin-top:46px;padding-top:20px;color:var(--muted);font-size:.9rem}.cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(181,160,255,.12),rgba(112,230,215,.08));border:1px solid #414364;border-radius:18px;padding:22px;margin-top:36px}.button{display:inline-block;background:linear-gradient(135deg,#b5a0ff,#70e6d7);color:#111323;font-weight:850;text-decoration:none;border-radius:12px;padding:11px 15px;white-space:nowrap}.breadcrumbs{font-size:.9rem;color:var(--muted);margin-bottom:22px}@media(max-width:620px){.wrap{padding:16px 16px 44px}nav{margin-bottom:32px;align-items:flex-start}.grid{grid-template-columns:1fr}.panel{padding:16px}.back{max-width:165px;text-align:right}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Главная навигация">
+<a class="brand" href="/" aria-label="TokenPilot — главная"><span class="logo" aria-hidden="true">T</span><span>TokenPilot</span></a>
+<a class="back" href="/">← Открыть калькулятор стоимости AI API</a>
+</nav>
+<div class="breadcrumbs"><a href="/">Главная</a> / Руководство по стоимости AI API</div>
+<header class="hero">
+<div class="eyebrow">Практическое руководство · Цена токенов</div>
+<h1>Как рассчитать стоимость AI API</h1>
+<p class="lead">Чтобы спланировать бюджет на ИИ, нужно оценить, сколько токенов приложение отправляет модели и сколько получает в ответ. Разберём формулу, пример месячных расходов и затраты, которые могут не входить в простой расчёт токенов.</p>
+<p class="small">TokenPilot — независимый инструмент для планирования. Цены в примере приведены только для иллюстрации и не являются актуальным предложением какого-либо провайдера. Всегда проверяйте официальные тарифы и правила тарификации используемой модели.</p>
+</header>
+<main>
+<section>
+<h2>1. Чем отличаются входные и выходные токены</h2>
+<p><strong>Входные токены</strong> — это данные, которые модель обрабатывает: ваш запрос, системные инструкции, подходящая история чата и другой текст или контекст в запросе. <strong>Выходные токены</strong> — то, что модель генерирует в ответ.</p>
+<p>Провайдеры часто указывают отдельную цену за миллион входных и выходных токенов. Выходные токены могут стоить дороже входных, поэтому расчёт только по длине запроса способен занизить расходы. В многоходовом чате приложение может повторно отправлять предыдущие сообщения как контекст — не считайте, что каждый запрос состоит только из последней фразы.</p>
+<aside>Количество токенов не равно количеству слов. Точный результат зависит от модели, токенизатора, языка, форматирования и типа данных. По возможности используйте реальные журналы запросов или инструменты подсчёта токенов провайдера.</aside>
+</section>
+<section>
+<h2>2. Формула расчёта за месяц</h2>
+<p>Если цена указана за один миллион токенов, рассчитайте входящие и исходящие токены отдельно:</p>
+<div class="panel">
+<div class="formula">Стоимость входных токенов = запросы × среднее число входных токенов на запрос × цена за 1 млн ÷ 1 000 000</div>
+<div class="formula" style="margin-top:12px">Стоимость выходных токенов = запросы × среднее число выходных токенов на запрос × цена за 1 млн ÷ 1 000 000</div>
+<div class="formula" style="margin-top:12px">Итого до резерва = входные расходы + выходные расходы</div>
+</div>
+<p>Чтобы заложить запас на колебания нагрузки, добавьте резерв:</p>
+<div class="formula">Целевой бюджет = сумма расходов × (1 + резерв в процентах ÷ 100)</div>
+<p>Резерв — это ваш способ планирования, а не отдельная комиссия провайдера. Выбирайте его с учётом того, насколько точно известны объём запросов и средняя длина токенов.</p>
+</section>
+<section>
+<h2>3. Пример: небольшой текстовый помощник</h2>
+<p>Предположим, приложение выполняет 12 000 запросов в месяц. В среднем на один запрос приходится 1 200 входных токенов и 350 выходных. Для примера, а не как реальные тарифы, возьмём цену $0,40 за миллион входных токенов и $1,60 за миллион выходных.</p>
+<div class="grid">
+<div class="stat"><span class="small">Входные токены</span><strong>$5,76 в месяц</strong><span class="small">12 000 × 1 200 × $0,40 ÷ 1 000 000</span></div>
+<div class="stat"><span class="small">Выходные токены</span><strong>$6,72 в месяц</strong><span class="small">12 000 × 350 × $1,60 ÷ 1 000 000</span></div>
+</div>
+<div class="panel">
+<div class="tablewrap"><table>
+<thead><tr><th>Расчёт</th><th>Условный результат</th></tr></thead>
+<tbody><tr><td>Входные токены</td><td>$5,76</td></tr><tr><td>Выходные токены</td><td>$6,72</td></tr><tr><td>Сумма без резерва</td><td><strong>$12,48</strong></td></tr><tr><td>Резерв 20%</td><td>$2,50</td></tr><tr><td>Целевой бюджет с округлением</td><td><strong>$14,98 в месяц</strong></td></tr></tbody>
+</table></div>
+</div>
+<p>Реальная сумма зависит от провайдера и модели, длины контекста, нагрузки и правил тарификации. Замените условные цены и средние значения на проверенные данные для своего сценария.</p>
+</section>
+<section>
+<h2>4. Как оценить расход токенов до запуска</h2>
+<ul>
+<li><strong>Начните с нагрузки.</strong> Оцените число запросов от одного пользователя за месяц и умножьте его на ожидаемое количество активных пользователей.</li>
+<li><strong>Считайте обе стороны.</strong> Возьмите несколько типичных задач и оцените среднее количество входных и выходных токенов. Короткие вопросы, длинные документы, программный код и длительные диалоги расходуют токены по-разному.</li>
+<li><strong>Учитывайте историю чата.</strong> В чат-приложениях длинная история увеличивает число входных токенов, если приложение не сокращает её, не суммирует и не обрабатывает другим способом.</li>
+<li><strong>Сравните лёгкую, обычную и высокую нагрузку.</strong> Лучше проверить несколько реалистичных сценариев, а не полагаться на одно среднее значение. При сравнении моделей сохраняйте одинаковые предположения о нагрузке.</li>
+</ul>
+<p>После запуска замените предположения фактическими данными. Пересматривайте оценку, когда меняются запросы, пользователи и возможности приложения.</p>
+</section>
+<section>
+<h2>5. Какие расходы может не учитывать расчёт токенов</h2>
+<p>Расчёт текстовых токенов — полезная отправная точка, но он не всегда совпадает с итоговым счётом. Проверьте, использует ли приложение также:</p>
+<ul>
+<li>Изображения, аудио, видео и другие мультимодальные данные со своими правилами обработки и тарификации.</li>
+<li>Встроенные инструменты, веб-поиск, выполнение кода, поиск по файлам или другие оплачиваемые действия и ресурсы.</li>
+<li>Кэширование входных данных, запись кэша, пакетную обработку, токены рассуждений или тарифные режимы с отдельными ставками и условиями.</li>
+<li>Хостинг, журналы, хранение данных, сетевой трафик, налоги, минимальные платежи или комиссию за конвертацию валюты, не входящие в стоимость самой модели.</li>
+</ul>
+<p>Проверяйте страницу тарифов и документацию по биллингу именно для выбранной модели и API. Цены могут меняться, а модели с похожими названиями могут иметь разные тарифы.</p>
+</section>
+<section>
+<h2>6. Как сравнивать модели честно</h2>
+<p>Чтобы сравнение было полезным, оставьте нагрузку одинаковой: количество запросов, среднее число входных и выходных токенов и размер резерва. Затем подставьте проверенные входные и выходные цены каждой модели. Если для той же задачи одна модель требует более длинных инструкций или генерирует больше токенов, учитывайте эту разницу тоже.</p>
+<p>Проверяйте тарифы на официальных страницах провайдеров:</p>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/pricing" rel="noopener noreferrer">Тарифы OpenAI API</a></li>
+<li><a href="https://docs.anthropic.com/en/docs/about-claude/pricing" rel="noopener noreferrer">Тарифы моделей и функций Anthropic</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener noreferrer">Тарифы Google Gemini API</a></li>
+</ul>
+<p>Проверьте единицы измерения, различия между входными и выходными токенами, тарифные уровни по длине контекста, правила кэширования, оплату инструментов и возможные бесплатные квоты.</p>
+</section>
+<section>
+<h2>7. Краткий список перед планированием бюджета</h2>
+<ul>
+<li>Уточните точное название модели и используемого API.</li>
+<li>Возьмите текущие входные и выходные цены из официальной документации.</li>
+<li>Оцените количество месячных запросов и среднее число токенов для каждой стороны.</li>
+<li>Добавьте длинные диалоги и любые дополнительные платные функции.</li>
+<li>Заложите резерв и сравните обычный сценарий с высокой нагрузкой.</li>
+<li>Обновите расчёт, когда появятся реальные данные об использовании.</li>
+</ul>
+</section>
+<section>
+<h2>Часто задаваемые вопросы</h2>
+<h3>Стоимость AI API зависит только от количества запросов?</h3>
+<p>Обычно одного количества запросов недостаточно для оценки модели с оплатой за токены. Важны число и тип токенов, выбранная модель и дополнительные платные возможности. Некоторые инструменты или сервисы могут тарифицироваться за запрос или действие.</p>
+<h3>Можно ли считать оценку точным счётом?</h3>
+<p>Нет. Это плановый расчёт, основанный на введённых предположениях. Реальная оплата определяется учётом использования и правилами провайдера.</p>
+<h3>TokenPilot автоматически загружает цены моделей?</h3>
+<p>Нет. Вводите цены вручную по официальной документации провайдера. Так исходные данные остаются понятными, и калькулятор не создаёт ложного впечатления о наличии живой ленты тарифов.</p>
+<h3>Нужен ли API-ключ?</h3>
+<p>Нет. TokenPilot выполняет расчёты локально в браузере на основе введённых значений. API-ключ для оценки стоимости не нужен.</p>
+</section>
+<div class="cta">
+<div><h2 style="margin:0 0 6px">Рассчитайте свой бюджет на AI API</h2><p style="margin:0;color:var(--muted)">Введите объём запросов, среднее число токенов, цены и резерв.</p></div>
+<a class="button" href="/">Открыть бесплатный калькулятор →</a>
+</div>
+</main>
+<footer>TokenPilot — независимый инструмент для планирования. Он не связан с OpenAI, Anthropic, Google и другими поставщиками ИИ. Цифры в примере приведены только для иллюстрации. <br><a href="/ai-api-cost-guide.html">Read this guide in English</a>.</footer>
+</div>
+</body>
+</html>

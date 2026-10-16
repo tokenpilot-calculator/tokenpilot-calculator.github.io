@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://petro89.github.io/tokenpilot/sitemap.xml
+Sitemap: https://tokenpilot-calculator.github.io/sitemap.xml

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e16">
+<title>How to Calculate AI API Costs | TokenPilot</title>
+<meta name="description" content="Learn how to estimate AI API costs using input and output tokens, per-million-token prices, a worked example, and a practical budget checklist.">
+<link rel="canonical" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html">
+<link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tokenpilot-calculator.github.io/ai-api-cost-guide.html">
+<meta property="og:title" content="How to Calculate AI API Costs | TokenPilot">
+<meta property="og:description" content="A practical guide to token pricing, monthly estimates, and safer AI API budgets.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Calculate AI API Costs","description":"A practical guide to estimating monthly LLM API costs from input and output tokens.","inLanguage":"en","mainEntityOfPage":"https://tokenpilot-calculator.github.io/ai-api-cost-guide.html","publisher":{"@type":"Organization","name":"TokenPilot"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b0e16;--panel:#131827;--line:#2a334a;--text:#f3f5fb;--muted:#aab4cb;--accent:#b5a0ff;--aqua:#70e6d7;--good:#8ce7bc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#302258 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}.wrap{width:min(920px,100%);margin:auto;padding:22px 24px 60px}a{color:var(--aqua);text-underline-offset:3px}a:hover{color:#b1fff4}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:4px 0 46px}.brand{font-weight:850;letter-spacing:-.035em;font-size:1.12rem;color:var(--text);text-decoration:none;display:flex;gap:10px;align-items:center}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--aqua));color:#111323;font-weight:950}.back{font-size:.93rem}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.13em;color:var(--aqua);text-transform:uppercase}h1{font-size:clamp(2.1rem,6vw,3.8rem);line-height:1.08;letter-spacing:-.055em;margin:12px 0 18px;max-width:800px}h2{font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.22;letter-spacing:-.03em;margin:2.1em 0 .65em}h3{font-size:1.1rem;line-height:1.3;margin:1.2em 0 .4em}p{margin:.75em 0}li{margin:.4em 0}.hero{margin-bottom:28px}.lead{font-size:1.15rem;max-width:760px;color:#d6dced}.muted,.small{color:var(--muted)}.small{font-size:.91rem}.panel{background:rgba(19,24,39,.92);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:22px 0}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#0e1320;border:1px solid #303a53;border-radius:12px;padding:14px 16px;overflow-wrap:anywhere;color:#d9d0ff}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.stat{background:#101522;border:1px solid #29334a;border-radius:14px;padding:14px}.stat strong{display:block;font-size:1.25rem;color:var(--good);margin:4px 0}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}th{color:#d9d0ff}aside{border-left:3px solid var(--aqua);padding:4px 0 4px 16px;color:#d7e1f3;margin:22px 0}footer{border-top:1px solid var(--line);margin-top:46px;padding-top:20px;color:var(--muted);font-size:.9rem}.cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(181,160,255,.12),rgba(112,230,215,.08));border:1px solid #414364;border-radius:18px;padding:22px;margin-top:36px}.button{display:inline-block;background:linear-gradient(135deg,#b5a0ff,#70e6d7);color:#111323;font-weight:850;text-decoration:none;border-radius:12px;padding:11px 15px;white-space:nowrap}.breadcrumbs{font-size:.9rem;color:var(--muted);margin-bottom:22px}@media(max-width:620px){.wrap{padding:16px 16px 44px}nav{margin-bottom:32px;align-items:flex-start}.grid{grid-template-columns:1fr}.panel{padding:16px}.back{max-width:125px;text-align:right}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main navigation">
+<a class="brand" href="/" aria-label="TokenPilot home"><span class="logo" aria-hidden="true">T</span><span>TokenPilot</span></a>
+<a class="back" href="/">← Open the AI API cost calculator</a>
+</nav>
+<div class="breadcrumbs"><a href="/">Home</a> / AI API cost guide</div>
+<header class="hero">
+<div class="eyebrow">Practical guide · Token pricing</div>
+<h1>How to calculate AI API costs</h1>
+<p class="lead">A reliable budget starts with two things: how many tokens your application sends to an AI model and how many tokens it receives back. This guide shows the formula, a worked example, and the costs that can sit outside a simple token estimate.</p>
+<p class="small">TokenPilot is an independent planning tool. Prices in the example are illustrative, not current offers from any provider. Always check the official pricing and billing rules for the model you use.</p>
+</header>
+<main>
+<section>
+<h2>1. Understand input and output tokens</h2>
+<p><strong>Input tokens</strong> are the content the model processes: your prompt, system instructions, relevant chat history, and other text or data included in the request. <strong>Output tokens</strong> are the content the model generates in response.</p>
+<p>Providers commonly list separate prices per million input and output tokens. Output can cost more than input, so estimating only the prompt size can understate your bill. In a multi-turn chat, earlier messages may be sent again as context; do not assume each request contains only the newest sentence.</p>
+<aside>Token counts are not the same as word counts. The exact count depends on the model, tokenizer, language, formatting, and content type. Use real usage logs or the provider's token-counting tools where available.</aside>
+</section>
+<section>
+<h2>2. Use the monthly cost formula</h2>
+<p>When a provider lists a price per one million tokens, calculate input and output separately:</p>
+<div class="panel">
+<div class="formula">Monthly input cost = requests × average input tokens per request × input price per 1M ÷ 1,000,000</div>
+<div class="formula" style="margin-top:12px">Monthly output cost = requests × average output tokens per request × output price per 1M ÷ 1,000,000</div>
+<div class="formula" style="margin-top:12px">Estimated total = input cost + output cost</div>
+</div>
+<p>If you want room for workload variation, add a safety buffer:</p>
+<div class="formula">Budget target = estimated total × (1 + buffer percentage ÷ 100)</div>
+<p>A buffer is a planning choice, not a provider fee. Choose it based on how uncertain your request volume and token averages are.</p>
+</section>
+<section>
+<h2>3. Worked example: a small text assistant</h2>
+<p>Suppose an application makes 12,000 requests per month. Its average request uses 1,200 input tokens and generates 350 output tokens. For illustration only, assume input costs $0.40 per million tokens and output costs $1.60 per million tokens.</p>
+<div class="grid">
+<div class="stat"><span class="small">Input</span><strong>$5.76 / month</strong><span class="small">12,000 × 1,200 × $0.40 ÷ 1,000,000</span></div>
+<div class="stat"><span class="small">Output</span><strong>$6.72 / month</strong><span class="small">12,000 × 350 × $1.60 ÷ 1,000,000</span></div>
+</div>
+<div class="panel">
+<div class="tablewrap"><table>
+<thead><tr><th>Calculation</th><th>Illustrative result</th></tr></thead>
+<tbody><tr><td>Input cost</td><td>$5.76</td></tr><tr><td>Output cost</td><td>$6.72</td></tr><tr><td>Estimated base total</td><td><strong>$12.48</strong></td></tr><tr><td>20% safety buffer</td><td>$2.50</td></tr><tr><td>Budget target, rounded</td><td><strong>$14.98 / month</strong></td></tr></tbody>
+</table></div>
+</div>
+<p>Your real total changes with the actual provider, model, context length, traffic, and billing features. Replace the sample prices and averages with verified values for your workload.</p>
+</section>
+<section>
+<h2>4. Estimate token usage before you have billing data</h2>
+<ul>
+<li><strong>Start with traffic.</strong> Estimate monthly requests per user and multiply by the expected number of active users.</li>
+<li><strong>Measure both sides.</strong> Use a few representative tasks to estimate the average input and output tokens. Short questions, long documents, code generation, and long conversations can behave very differently.</li>
+<li><strong>Include conversation context.</strong> For chat products, longer histories can increase input tokens unless your app truncates, summarizes, or stores context differently.</li>
+<li><strong>Model light, typical, and heavy use.</strong> Compare several realistic scenarios instead of relying on one average. Use the same workload assumptions when comparing models.</li>
+</ul>
+<p>When your product is live, replace guesses with observed usage. Review averages as prompts, users, and product features change.</p>
+</section>
+<section>
+<h2>5. Costs a token-only calculator may miss</h2>
+<p>A basic text-token estimate is a useful starting point, but it is not always the final invoice. Check whether your workload also uses:</p>
+<ul>
+<li>Image, audio, video, or other multimodal input and output, which may have their own tokenization or pricing rules.</li>
+<li>Built-in tools, web search, code execution, file search, or other billed actions and resources.</li>
+<li>Cached input, cache writes, batch processing, reasoning tokens, or different service tiers with separate rates or eligibility rules.</li>
+<li>Hosting, logging, storage, networking, taxes, minimum charges, or currency conversion fees outside the model API itself.</li>
+</ul>
+<p>Read the pricing page and billing documentation for the exact model and API product. Provider pricing can change, and two models with similar names may have different rates.</p>
+</section>
+<section>
+<h2>6. Compare models fairly</h2>
+<p>For a useful comparison, hold the workload constant: same number of requests, average input tokens, average output tokens, and safety buffer. Then enter each model's verified input and output rates. If one option needs a longer prompt or generates more tokens to complete the same task, account for that difference too.</p>
+<p>Use the providers' official pages as the source of truth:</p>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/pricing" rel="noopener noreferrer">OpenAI API pricing</a></li>
+<li><a href="https://docs.anthropic.com/en/docs/about-claude/pricing" rel="noopener noreferrer">Anthropic model and feature pricing</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener noreferrer">Google Gemini API pricing</a></li>
+</ul>
+<p>Check the rate unit, input/output distinction, context tier, cached-token rules, tool charges, and any free quotas before comparing totals.</p>
+</section>
+<section>
+<h2>7. A quick budget checklist</h2>
+<ul>
+<li>Confirm the exact model and API product.</li>
+<li>Copy current input and output prices from official documentation.</li>
+<li>Estimate monthly requests and average tokens for each side.</li>
+<li>Account for longer conversations and any additional billed features.</li>
+<li>Choose a safety buffer and compare at least a typical and a high-use scenario.</li>
+<li>Revisit the estimate after real usage data becomes available.</li>
+</ul>
+</section>
+<section>
+<h2>Frequently asked questions</h2>
+<h3>Are AI API costs based on the number of requests?</h3>
+<p>Usually, request volume alone is not enough to estimate a token-billed model. The number and type of tokens, selected model, and any separately billed features also matter. Some products or tools may charge per request or action.</p>
+<h3>Can I use the estimate as an exact quote?</h3>
+<p>No. It is a planning estimate based on the assumptions you enter. Actual billing follows the provider's usage records and pricing rules.</p>
+<h3>Does TokenPilot automatically fetch model prices?</h3>
+<p>No. Enter prices manually from the provider's official documentation. This keeps the assumptions visible and avoids suggesting that the calculator has a live price feed.</p>
+<h3>Do I need to provide an API key?</h3>
+<p>No. TokenPilot calculates locally in your browser using the values you enter. It does not need an API key to produce an estimate.</p>
+</section>
+<div class="cta">
+<div><h2 style="margin:0 0 6px">Estimate your own AI API budget</h2><p style="margin:0;color:var(--muted)">Use your request volume, token averages, prices, and safety buffer.</p></div>
+<a class="button" href="/">Open free cost calculator →</a>
+</div>
+</main>
+<footer>TokenPilot is an independent planning tool and is not affiliated with OpenAI, Anthropic, Google, or other AI providers. Example figures are illustrative only. <br><a href="/ru/raschet-stoimosti-ai-api.html">Читайте это руководство на русском языке</a>.</footer>
+</div>
+</body>
+</html>

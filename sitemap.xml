@@ -40,4 +40,46 @@
   <url>
     <loc>https://tokenpilot-calculator.github.io/buildbrief/</loc>
   </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-ispravleniya-bagov.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-ispravleniya-bagov.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-ispravleniya-bagov.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-redizayna-sayta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-redizayna-sayta.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-redizayna-sayta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-razrabotki-igry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html"/>
+  </url>
+  <url>
+    <loc>https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-razrabotki-igry.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-razrabotki-igry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html"/>
+  </url>
 </urlset>

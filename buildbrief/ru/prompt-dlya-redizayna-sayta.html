@@ -53,6 +53,6 @@ const promptText=document.getElementById("promptText"),copyStatus=document.getEl
 document.getElementById("copyPrompt").addEventListener("click",async()=>{
  const text=promptText.textContent;
  try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(text);copyStatus.textContent="Скопировано ✓";}else throw new Error("clipboard unavailable");}
- catch(error){const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}area.remove();copyStatus.textContent=ok?"Скопировано ✓":"剪贴板不可用，请手动选择并复制提示词。";}
+ catch(error){const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}area.remove();copyStatus.textContent=ok?"Скопировано ✓":"Буфер обмена недоступен — выдели промпт и скопируй его вручную.";}
 });
 </script></body></html>

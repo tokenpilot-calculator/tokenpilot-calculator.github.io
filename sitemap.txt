@@ -1,0 +1,14 @@
+https://tokenpilot-calculator.github.io/
+https://tokenpilot-calculator.github.io/ai-api-cost-guide.html
+https://tokenpilot-calculator.github.io/ru/raschet-stoimosti-ai-api.html
+https://tokenpilot-calculator.github.io/ai-chatbot-cost-calculator.html
+https://tokenpilot-calculator.github.io/ru/kalkulyator-stoimosti-ai-chatbota.html
+https://tokenpilot-calculator.github.io/ai-saas-pricing-margin-calculator.html
+https://tokenpilot-calculator.github.io/ru/kalkulyator-tseny-i-marzhi-ai-saas.html
+https://tokenpilot-calculator.github.io/buildbrief/
+https://tokenpilot-calculator.github.io/buildbrief/bug-fix-prompt.html
+https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-ispravleniya-bagov.html
+https://tokenpilot-calculator.github.io/buildbrief/website-redesign-prompt.html
+https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-redizayna-sayta.html
+https://tokenpilot-calculator.github.io/buildbrief/game-development-prompt.html
+https://tokenpilot-calculator.github.io/buildbrief/ru/prompt-dlya-razrabotki-igry.html
